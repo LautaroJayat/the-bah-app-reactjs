@@ -47,7 +47,7 @@ export class Home extends Component {
           <span>Wellcome to</span>
           <h1>Bah!</h1>
         </div>
-        <input id="name" name="name" type="text" autocomplete="off" placeholder="What's your name?"></input>
+        <input id="name" name="name" type="text" autoComplete="off" placeholder="What's your name?"></input>
 
         <svg id="start"
           width="800"

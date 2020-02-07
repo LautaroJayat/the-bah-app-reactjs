@@ -22,9 +22,10 @@ export class Play extends Component {
                     <input type="text" placeholder="Looking to Bah something?"></input>
                     <button className="searchButton"><img src={search} alt="search button"></img></button>
                 </div>
-                <Picture />
-                <Caption />
-                <Buttons />
+
+                <Picture counter={this.props.counter} news={this.props.news} />
+                <Caption counter={this.props.counter} news={this.props.news} />
+                <Buttons bahNews={this.props.bahNews} fetchNews={this.props.fetchNews} news={this.props.news} />
             </React.Fragment>
         )
     }
