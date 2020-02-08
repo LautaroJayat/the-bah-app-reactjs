@@ -57,12 +57,10 @@ export default class Buttons extends Component {
 
                 {this.props.news.length > 0 ?
                     <React.Fragment>
-                        <button style={this.careStyle}>Care About</button>
+                        <button onClick={this.props.careAbout} style={this.careStyle}>Care About</button>
                         <button onClick={this.props.bahNews} style={this.bahStyle}>Bah!</button>
                     </React.Fragment> :
                     <button onClick={this.props.fetchNews} style={this.yesStyle}>Yes!</button>
-
-
                 }
 
 

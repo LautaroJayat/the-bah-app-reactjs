@@ -7,8 +7,9 @@ export default class Caption extends Component {
         margin: 'auto',
         width: '80%',
         height: 'auto',
-        minHeight: '100px',
+        minHeight: '120px',
         position: 'relative',
+        fontSize: '90%',
         top: '56%',
         display: 'flex',
         justifyContent: 'center',
@@ -18,6 +19,7 @@ export default class Caption extends Component {
         filter: 'drop-shadow(5px 5px 10px black)',
 
     }
+
     captionStyle = {
         width: '90%',
         height: 'auto',
@@ -25,25 +27,25 @@ export default class Caption extends Component {
         textAlign: 'center',
         padding: '0',
         letterSpacing: '0.1rem',
-        cursor: 'default'
-
+        cursor: 'default',
+        animation: 'captionIn 1s ease-in-out 1'
     }
-    componentDidMount() {
-        console.log('caption did mount')
-        console.log('-------------------')
-
+    update = this.props.shouldUpdate;
+    shouldComponentUpdate(update) {
+        return update
     }
-
-    componentDidUpdate() {
-        console.log('caption did update')
-        console.log('-------------------')
-
-    }
-
     render() {
         return (
             <div style={this.captionContainer}>
-                <p style={this.captionStyle}>{this.props.news.length > 0 ? this.props.news[this.props.counter].title : "Ready to Bah?"}</p>
+                <p
+                  
+                    style={this.captionStyle}>
+
+                    {
+                        this.props.news.length > 0 ?
+                            this.props.news[0].caption : "Ready to Bah?"
+                    }
+                </p>
             </div>
         )
     }
