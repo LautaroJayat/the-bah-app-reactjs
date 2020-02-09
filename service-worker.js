@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/the-bah-app-reactjs/precache-manifest.5912fc6b6561ac8ba64caddd1ea537f5.js"
+  "/the-bah-app-reactjs/precache-manifest.378eae03939e963cb092d1cd2323973d.js"
 );
 
 self.addEventListener('message', (event) => {
