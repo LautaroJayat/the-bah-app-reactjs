@@ -30,6 +30,17 @@ export default class Caption extends Component {
         cursor: 'default',
         animation: 'captionIn 1s ease-in-out 1'
     }
+    readyStyle = {
+        width: '90%',
+        height: 'auto',
+        color: '#BBE1FA',
+        textAlign: 'center',
+        padding: '0',
+        letterSpacing: '0.1rem',
+        cursor: 'default',
+        animation: 'captionIn 1s ease-in-out 1',
+        fontSize: '2rem'
+    }
     update = this.props.shouldUpdate;
     shouldComponentUpdate(update) {
         return update
@@ -38,8 +49,8 @@ export default class Caption extends Component {
         return (
             <div style={this.captionContainer}>
                 <p
-                  
-                    style={this.captionStyle}>
+
+                    style={this.props.news.length > 0 ? this.captionStyle : this.readyStyle}>
 
                     {
                         this.props.news.length > 0 ?

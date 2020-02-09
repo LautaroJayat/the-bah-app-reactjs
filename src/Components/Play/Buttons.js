@@ -17,11 +17,13 @@ export default class Buttons extends Component {
         borderRadius: '20%',
         border: 'none',
         backgroundColor: '#682727',
-        color: '#ABFFA9',
-        fontSize: '2rem',
+        color: '#BBE1FA',
+        fontSize: '2.5rem',
         textAlign: 'center',
         filter: 'drop-shadow(5px 5px 10px black)',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontWeight: 'bold',
+
 
 
 
@@ -31,24 +33,27 @@ export default class Buttons extends Component {
         height: '100%',
         borderRadius: '20%',
         border: 'none',
-        backgroundColor: '#ABFFA9',
+        backgroundColor: '#BBE1FA',
         color: '#1B262C',
-        fontSize: '2.5rem',
+        fontSize: '3rem',
         textAlign: 'center',
         filter: 'drop-shadow(5px 5px 10px black)',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontWeight: 'bold',
+
     }
     yesStyle = {
         width: '60%',
         height: '100%',
-        borderRadius: '20%',
+        borderRadius: '10%/20%',
         border: 'none',
-        backgroundColor: '#ABFFA9',
+        backgroundColor: '#BBE1FA',
         color: '#1B262C',
-        fontSize: '2.5rem',
+        fontSize: '3.5rem',
         textAlign: 'center',
         filter: 'drop-shadow(5px 5px 10px black)',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontWeight: 'bold',
     }
 
     render() {

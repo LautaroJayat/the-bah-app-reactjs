@@ -1,5 +1,6 @@
 {
-  "name": "bah-app",
+  "homepage": "http://lautarojayat.github.io/the-bah-app-reactjs/",
+  "name": "the-bah-app-reactjs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +14,8 @@
     "uuid": "^3.4.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -35,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "http-server": "^0.12.1"
   }
 }

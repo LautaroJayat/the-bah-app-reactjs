@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import uuid from 'uuid'
 import './App.css';
 import Home from './Components/Home/Home'
@@ -153,36 +153,38 @@ export class App extends Component {
 
     render() {
         return (
-            <div className="main-container" >
-                <Switch>
-                    <Route exact path="/" render={(props) =>
-                        <Home {...props}
-                            fetchNews={this.fetchNews}
-                            addName={this.addName}
-                            name={this.state.name}
-                        />}
-                    />
+            <HashRouter basename="/">
+                <div className="main-container" >
+                    <Switch>
+                        <Route exact path="/" render={(props) =>
+                            <Home {...props}
+                                fetchNews={this.fetchNews}
+                                addName={this.addName}
+                                name={this.state.name}
+                            />}
+                        />
 
-                    <Route path="/play" render={(props) =>
-                        <Play {...props}
-                            shouldUpdate={this.shouldUpdate}
-                            searchBah={this.searchBah}
-                            count={this.state.count}
-                            counter={this.state.counter}
-                            bahNews={this.bahNew}
-                            careAbout={this.careAbout}
-                            fetchNews={this.fetchNews}
-                            news={this.state.news} />}
-                    />
+                        <Route path="/play" render={(props) =>
+                            <Play {...props}
+                                shouldUpdate={this.shouldUpdate}
+                                searchBah={this.searchBah}
+                                count={this.state.count}
+                                counter={this.state.counter}
+                                bahNews={this.bahNew}
+                                careAbout={this.careAbout}
+                                fetchNews={this.fetchNews}
+                                news={this.state.news} />}
+                        />
 
-                    <Route path="/settings" render={(props) =>
-                        <Settings {...props}
-                            name={this.state.name}
-                            bahs={this.state.bahs}
-                            cares={this.state.cares} />} />
+                        <Route path="/settings" render={(props) =>
+                            <Settings {...props}
+                                name={this.state.name}
+                                bahs={this.state.bahs}
+                                cares={this.state.cares} />} />
 
-                </Switch>
-            </div >
+                    </Switch>
+                </div >
+            </HashRouter>
 
         )
     }

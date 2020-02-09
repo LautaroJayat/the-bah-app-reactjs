@@ -243,8 +243,21 @@ img {
   left: 7%;
   z-index: 3;
   font-weight: bolder;
-  filter: drop-shadow(10px 10px 7px rgb(0, 0, 0));
   cursor: pointer;
+  filter: drop-shadow(10px 10px 7px rgba(0, 0, 0, 0.658));
+  animation: playButton 1s ease-in-out infinite;
+}
+
+@keyframes playButton {
+  0% {
+    transform: translateY(-1px)
+  }
+  50% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(-1px);
+  }
 }
 
 #slogan {
