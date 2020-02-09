@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/bah-app/static/css/main.12fb69e8.chunk.css",
+    "main.js": "/bah-app/static/js/main.3ed872f9.chunk.js",
+    "main.js.map": "/bah-app/static/js/main.3ed872f9.chunk.js.map",
+    "runtime-main.js": "/bah-app/static/js/runtime-main.67d88309.js",
+    "runtime-main.js.map": "/bah-app/static/js/runtime-main.67d88309.js.map",
+    "static/js/2.bdbf86b0.chunk.js": "/bah-app/static/js/2.bdbf86b0.chunk.js",
+    "static/js/2.bdbf86b0.chunk.js.map": "/bah-app/static/js/2.bdbf86b0.chunk.js.map",
+    "index.html": "/bah-app/index.html",
+    "precache-manifest.3697b3e327f6cf863901f3e0c0303f80.js": "/bah-app/precache-manifest.3697b3e327f6cf863901f3e0c0303f80.js",
+    "service-worker.js": "/bah-app/service-worker.js",
+    "static/css/main.12fb69e8.chunk.css.map": "/bah-app/static/css/main.12fb69e8.chunk.css.map",
+    "static/js/2.bdbf86b0.chunk.js.LICENSE.txt": "/bah-app/static/js/2.bdbf86b0.chunk.js.LICENSE.txt",
+    "static/media/drama.jpg": "/bah-app/static/media/drama.4f4c4db0.jpg",
+    "static/media/drama2.jpg": "/bah-app/static/media/drama2.4fc139f1.jpg",
+    "static/media/face1.jpg": "/bah-app/static/media/face1.04e5449c.jpg",
+    "static/media/search-24px.svg": "/bah-app/static/media/search-24px.09d7e628.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.67d88309.js",
+    "static/js/2.bdbf86b0.chunk.js",
+    "static/css/main.12fb69e8.chunk.css",
+    "static/js/main.3ed872f9.chunk.js"
+  ]
+}
