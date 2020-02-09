@@ -8,7 +8,7 @@ import Settings from './Components/Settings/Settings';
 
 export class App extends Component {
     state = {
-        name: "Alejandro",
+        name: "",
         email: "",
         password: "",
         news: [],
@@ -19,28 +19,36 @@ export class App extends Component {
 
 
 
-    keywords = ['tv', 'wind', 'bank', 'marilyn', 'dinosaur', 'diet', 'rock', 'winter', 'flood', 'war', 'evolution', 'china', 'japan', 'argentina', 'zimbawe', 'corea', 'namibia', 'rusia', 'venezuela', 'virus', 'trump', 'obama', 'clinton', 'water', 'macdonalds', 'nuclear', 'space', 'congress', 'madonna', 'monkey', 'nintendo', 'tsunami', 'africa']
+    keywords = ['bank', 'trump', 'obama', 'clinton', 'war', 'tv', 'wind', 'marilyn', 'dinosaur', 'diet', 'rock', 'winter', 'flood', 'evolution', 'china', 'japan', 'argentina', 'zimbawe', 'corea', 'namibia', 'rusia', 'venezuela', 'virus', 'water', 'macdonalds', 'nuclear', 'space', 'congress', 'madonna', 'monkey', 'nintendo', 'tsunami', 'africa']
     keywordCount = 0;
 
-    addName = () => { }
-    addmail = () => { }
+    addName = (name) => {
+        this.setState({ name: name });
+    }
+    addMail = () => { }
     addPassword = () => { }
 
 
     fetchNews = () => {
-        fetch("https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key=1LsdrHGLkK3RG4NTbmDwKAlkcfYTaqqp")
+        console.log("fetching!");
+        fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${this.keywords[this.keywordCount]}&api-key=1LsdrHGLkK3RG4NTbmDwKAlkcfYTaqqp`)
             .then(res => res.json())
             .then(res => {
-                const results = res.results.map((e) => ({
+                console.log(res)
+                var results = res.response.docs.filter((e) => e.multimedia.length > 0);
+                results = results.map((e) => ({
                     key: uuid.v4(),
-                    image: e.media[0]["media-metadata"][2].url,
-                    caption: e.title, alt: e.media[0].caption
+                    image: "https://www.nytimes.com/" + e.multimedia[0].url,
+                    caption: e.snippet.length < 151 ? e.snippet : e.snippet.substr(0, 150) + "...",
+                    alt: e.snippet
                 }));
-                this.setState({ news: [...this.state.news, ...results] });
-                console.log(this.state.news);
 
+                this.setState({ news: [...this.state.news, ...results] });
+                this.keywordCount++
+                console.log(this.state.news);
             })
-            .catch(err => console.log(err))
+            .catch(err => { console.log(err); console.log(this.state.news) })
+
     }
     bahNew = () => {
         if (this.state.news.length > 0) {
@@ -71,7 +79,7 @@ export class App extends Component {
                 .catch(err => { console.log(err); console.log(this.state.news) })
         }
 
-        this.setState({ counter: this.state.counter + 1, bah: this.state.bahs + 1 });
+        this.setState({ bahs: this.state.bahs + 1 });
     }
     careAbout = () => {
         if (this.state.news.length > 0) {
@@ -101,7 +109,7 @@ export class App extends Component {
                 .catch(err => { console.log(err); console.log(this.state.news) })
         }
 
-        this.setState({ counter: this.state.counter + 1, cares: this.state.cares + 1 });
+        this.setState({ cares: this.state.cares + 1 });
     }
     searchBah = (keyword) => {
         this.setState({
@@ -148,7 +156,12 @@ export class App extends Component {
             <div className="main-container" >
                 <Switch>
                     <Route exact path="/" render={(props) =>
-                        <Home {...props} fetchNews={this.fetchNews} />} />
+                        <Home {...props}
+                            fetchNews={this.fetchNews}
+                            addName={this.addName}
+                            name={this.state.name}
+                        />}
+                    />
 
                     <Route path="/play" render={(props) =>
                         <Play {...props}
@@ -163,7 +176,10 @@ export class App extends Component {
                     />
 
                     <Route path="/settings" render={(props) =>
-                        <Settings {...props} name={this.state.name} />} />
+                        <Settings {...props}
+                            name={this.state.name}
+                            bahs={this.state.bahs}
+                            cares={this.state.cares} />} />
 
                 </Switch>
             </div >

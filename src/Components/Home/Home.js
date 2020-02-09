@@ -7,6 +7,20 @@ import drama2 from './drama2.jpg'
 
 
 export class Home extends Component {
+
+  state = { inputName: "" }
+  onChange = (e) => {
+    this.setState({ inputName: e.target.value });
+  }
+  onSubmit = (e) => {
+    if (this.state.inputName === "") {
+      this.props.addName("GUEST");
+    } else {
+      this.props.addName(this.state.inputName);
+      this.setState({ inputName: "" })
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -25,7 +39,7 @@ export class Home extends Component {
           </g>
         </svg>
         <div id="decoration-one"></div>
-        <Link to="/Settings">
+        <Link onClick={this.onSubmit} to="/Settings">
           <div className="menu-container">
             <div className="first"></div>
             <div className="second"></div>
@@ -47,9 +61,10 @@ export class Home extends Component {
           <span>Wellcome to</span>
           <h1>Bah!</h1>
         </div>
-        <input id="name" name="name" type="text" autoComplete="off" placeholder="What's your name?"></input>
+        <input id="name" onChange={this.onChange} name="name" type="text" autoComplete="off" placeholder="What's your name?"></input>
 
-        <svg id="start"
+        <svg
+          id="start"
           width="800"
           height="800"
           viewBox="0 0 600 600"
@@ -57,7 +72,7 @@ export class Home extends Component {
 
         >
 
-          <Link to="/play" ><g transform="translate(10,560) rotate(95)">
+          <Link onClick={this.onSubmit} to="/play" ><g transform="translate(10,560) rotate(95)">
             <path d="M170.1,-139.1C190.5,-109.9,156.7,-41,129.3,9.6C101.9,60.1,80.9,92.2,44.1,121.3C7.4,150.5,-45.1,176.6,-88.9,163.6C-132.7,150.6,-167.7,98.4,-186.5,36.7C-205.3,-25.1,-207.8,-96.4,-174,-128.6C-140.2,-160.8,-70.1,-153.9,2.3,-155.8C74.8,-157.6,149.6,-168.3,170.1,-139.1Z" fill="#0F4C75" />
           </g></Link>
         </svg>
@@ -72,7 +87,7 @@ export class Home extends Component {
           </g>
         </svg>
 
-        <Link to="/play"><h2 id="start-button">Start!</h2></Link>
+        <Link onClick={this.onSubmit} to="/play"><h2 id="start-button">Start!</h2></Link>
         <span id="slogan">Just in time to <strong>Bah!</strong></span>
 
       </React.Fragment>

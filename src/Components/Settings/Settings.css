@@ -1,0 +1,80 @@
+.title-background {
+    width: 80%;
+    height: auto;
+    padding: 1rem;
+    background-color: #3282B8;
+    border-radius: 10% /50%;
+    margin: 1.5rem auto;
+    filter: drop-shadow(2px 5px 10px black);
+}
+
+.title-background h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #BBE1FA;
+    filter: drop-shadow(2px 5px 6px black);
+}
+
+.span-background {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.26);
+}
+
+.span-background p {
+    font-size: 1.3rem;
+    text-align: center;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.bah-background {
+    width: 80%;
+    height: auto;
+    padding: 2rem 1rem;
+    background-color: #BBE1FA;
+    border-radius: 10% 10%/ 20% 20%;
+    margin: 1rem auto 1rem auto;
+    display: flex;
+    justify-content: space-evenly;
+    filter: drop-shadow(2px 5px 10px black);
+}
+
+.bah-background h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #1B262C;
+    font-weight: bolder;
+    filter: drop-shadow(2px 5px 6px rgba(0, 0, 0, 0.329));
+}
+
+.cares-background {
+    width: 80%;
+    height: auto;
+    padding: 2rem 1rem;
+    border-radius: 10% 10%/ 20% 20%;
+    margin: 2rem auto 1rem auto;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #682727;
+    filter: drop-shadow(2px 5px 10px black);
+}
+
+.cares-background h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #BBE1FA;
+    filter: drop-shadow(2px 5px 6px black);
+}
+
+.return {
+    font-size: 1.5rem;
+    color: #BBE1FA;
+    filter: drop-shadow(2px 5px 6px black);
+    margin-top: 5%;
+    width: 100%;
+    text-align: center;
+    font-weight: bolder;
+}
